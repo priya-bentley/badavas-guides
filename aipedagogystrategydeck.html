@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Pedagogy Strategy Deck | Badavas Center</title>
+<!--
+  PUBLISHING NOTES (Badavas Center)
+  1. Hub link: the top bar and footer link to https://www.bentley.edu/centers/badavas-center/aipedagogy
+  2. The "find and correct flawed AI explanations" question links to aiandmetacognition.html,
+     so keep this file in the same GitHub folder as the metacognition guide.
+  3. Pilot: delete the robots "noindex" line below at public launch.
+  4. Deep links: ?goal=outsourcing | deepen | time   ?strategy=<id>   #<id> opens it in "All strategies"
+     e.g. ?strategy=interactive-defenses  or  #teach-the-ai
+-->
+<meta name="robots" content="noindex">
+<meta name="description" content="Fourteen research-based strategies for designing assignments and activities where learning stays visible when students have AI. A faculty resource from the Badavas Center at Bentley University.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Pedagogy Strategy Deck">
+<meta property="og:description" content="Pick what you're trying to do and get a strategy you can try this week, with AI prompts and syllabus language ready to copy.">
+<meta property="og:site_name" content="Badavas Center · AI in Teaching and Learning">
+<meta name="theme-color" content="#F5F6F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111614" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper: #F5F6F3; --surface: #FFFFFF; --ink: #18201C; --muted: #56615B; --line: #D7DCD6;
+  --g1: #94550A; --g1-soft: #F6EAD8;
+  --g2: #0E6A5A; --g2-soft: #DFEFE8;
+  --g3: #5141A6; --g3-soft: #E7E4F7;
+  --focus: #0075BE; --brand-blue: #0075BE; --brand-btn: #0075BE; --brand-yellow: #FFCC33; --plate: #FFFFFF;
+  --today: #FFF6D6; --today-line: #E8C65A;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111614; --surface: #19201D; --ink: #E5EBE7; --muted: #9DA9A2; --line: #2C3632;
+    --g1: #E2A55A; --g1-soft: #362817; --g2: #5CC2A8; --g2-soft: #18342C; --g3: #A99CF0; --g3-soft: #26223F;
+    --focus: #6BB8EC; --brand-blue: #6BB8EC; --brand-btn: #1C6CA6; --today: #2E2814; --today-line: #8A7428; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111614; --surface: #19201D; --ink: #E5EBE7; --muted: #9DA9A2; --line: #2C3632;
+  --g1: #E2A55A; --g1-soft: #362817; --g2: #5CC2A8; --g2-soft: #18342C; --g3: #A99CF0; --g3-soft: #26223F;
+  --focus: #6BB8EC; --brand-blue: #6BB8EC; --brand-btn: #1C6CA6; --today: #2E2814; --today-line: #8A7428; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; padding-inline: 20px; }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+.wrap { max-width: 1080px; margin-inline: auto; }
+h1, h2, h3, h4 { font-family: var(--display); line-height: 1.12; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.g1 { --c: var(--g1); --cs: var(--g1-soft); }
+.g2 { --c: var(--g2); --cs: var(--g2-soft); }
+.g3 { --c: var(--g3); --cs: var(--g3-soft); }
+
+.skip { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--ink); color: var(--paper); padding: 10px 14px; border-radius: 8px; font-family: var(--display); font-weight: 600; text-decoration: none; }
+.skip:focus { top: 12px; }
+nav.top { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); margin-inline: -20px; padding: 10px 20px; }
+nav.top .wrap { display: flex; gap: 6px 16px; align-items: center; flex-wrap: wrap; }
+nav.top .brand { font-family: var(--display); font-weight: 800; font-size: 17px; text-decoration: none; margin-right: auto; display: inline-flex; gap: 8px; align-items: baseline; }
+nav.top .coll { font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+nav.top a.nl { font-family: var(--mono); font-size: 13px; text-decoration: none; color: var(--muted); }
+nav.top a.nl:hover { color: var(--ink); }
+
+.brandbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 28px; }
+.brandbar .plate { background: var(--plate); border-radius: 12px; padding: 10px 16px; display: inline-flex; border: 1px solid var(--line); }
+.brandbar img { display: block; width: 220px; height: auto; }
+.brandbar .label { color: var(--brand-blue); }
+header.hero { padding-block: 28px 8px; display: grid; gap: 16px; }
+header.hero h1 { font-size: clamp(36px, 5.6vw, 60px); font-weight: 800; letter-spacing: -0.02em; max-width: 16ch; }
+header.hero h1 .mark { background: linear-gradient(transparent 58%, var(--brand-yellow) 58%, var(--brand-yellow) 90%, transparent 90%); padding-inline: 2px; color: #18201C; }
+:root[data-theme="dark"] header.hero h1 .mark { color: var(--ink); background: linear-gradient(transparent 86%, var(--brand-yellow) 86%, var(--brand-yellow) 96%, transparent 96%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) header.hero h1 .mark { color: var(--ink); background: linear-gradient(transparent 86%, var(--brand-yellow) 86%, var(--brand-yellow) 96%, transparent 96%); } }
+header.hero .lede { font-size: clamp(18px, 2vw, 21px); max-width: 52ch; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 8px 0 0; padding: 0; list-style: none; }
+.steps li { border-top: 2px solid var(--ink); padding-top: 10px; display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; font-size: 15px; }
+.steps .n { font-family: var(--display); font-weight: 800; font-size: 22px; }
+.steps b { font-family: var(--display); font-weight: 600; font-size: 16px; display: block; }
+.steps span.d { color: var(--muted); }
+
+.tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--ink); margin-top: 32px; overflow-x: auto; }
+.tab { background: none; border: 0; padding: 12px 18px 10px; font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--muted); cursor: pointer; border-radius: 8px 8px 0 0; white-space: nowrap; min-height: 44px; }
+.tab:hover { color: var(--ink); background: var(--surface); }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+.panel { padding-block: 28px 56px; }
+
+/* Find */
+.stepblock { display: grid; gap: 12px; margin-bottom: 28px; }
+.stephead { display: flex; gap: 12px; align-items: baseline; }
+.stephead .sn { font-family: var(--mono); font-size: 13px; background: var(--ink); color: var(--paper); border-radius: 99px; padding: 2px 9px; }
+.stephead h2 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; }
+.stephead h2:focus { outline: none; }
+.goals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.goal { text-align: left; background: var(--surface); border: 2px solid var(--line); border-top: 6px solid var(--c); border-radius: 12px; padding: 16px 18px; cursor: pointer; display: grid; gap: 6px; align-content: start; min-height: 44px; }
+.goal:hover { border-color: var(--c); }
+.goal[aria-pressed="true"] { background: var(--cs); border-color: var(--c); }
+.goal .gt { font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.25; }
+.goal .gc { font-family: var(--mono); font-size: 12px; color: var(--c); }
+.qs { display: grid; gap: 8px; }
+.q { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; text-decoration: none; min-height: 44px; }
+.q:hover { border-color: var(--c); }
+.q[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.q .qt { font-size: 16px; line-height: 1.4; }
+.q .qn { font-family: var(--mono); font-size: 12px; white-space: nowrap; opacity: 0.85; }
+.hint { color: var(--muted); font-size: 15px; }
+
+/* Strategy */
+.strat { background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--c); border-radius: 14px; padding: 24px; display: grid; gap: 16px; }
+.strat .tag { justify-self: start; font-family: var(--mono); font-size: 12px; background: var(--cs); color: var(--c); padding: 3px 9px; border-radius: 4px; }
+.strat h3 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; }
+.strat h3:focus { outline: none; }
+.strat .what { font-size: 17px; max-width: 68ch; }
+.strat .use { font-size: 15px; color: var(--muted); font-style: italic; max-width: 68ch; }
+.today { background: var(--today); border: 1px solid var(--today-line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 8px; }
+.today .tl { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.today .tl b { font-family: var(--display); font-weight: 800; font-size: 18px; }
+.blocks { display: grid; gap: 8px; font-size: 16px; max-width: 72ch; }
+.blocks ul, .blocks ol { margin: 0; padding-left: 22px; display: grid; gap: 4px; }
+.more { border-top: 1px solid var(--line); }
+.more > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 2px; font-family: var(--display); font-weight: 600; font-size: 17px; min-height: 44px; }
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::after { content: "+"; font-family: var(--mono); font-size: 20px; color: var(--c); }
+.more[open] > summary::after { content: "−"; }
+.more > summary .sub { font-family: var(--mono); font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 8px; }
+.more .inner { padding: 4px 2px 18px; display: grid; gap: 14px; }
+.levels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.level { display: grid; gap: 6px; align-content: start; }
+.prompts { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; counter-reset: p; }
+.prompts li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: start; background: var(--paper); border-radius: 8px; padding: 10px 12px; font-size: 15px; line-height: 1.5; }
+.copy { font-family: var(--mono); font-size: 12px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; white-space: nowrap; min-height: 32px; }
+.copy:hover { border-color: var(--ink); }
+.copy.done { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.student { display: grid; gap: 10px; }
+.student blockquote { margin: 0; padding: 12px 16px; background: var(--cs); border-radius: 8px; font-style: italic; font-size: 16px; }
+.student .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.whygrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.whygrid ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 15px; }
+.science { background: var(--paper); border-radius: 8px; padding: 12px 14px; font-size: 15px; }
+
+/* All strategies */
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 20px; }
+.chip { font-family: var(--mono); font-size: 13px; padding: 8px 14px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; min-height: 36px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.group { display: grid; gap: 10px; margin-bottom: 32px; }
+.group > h2 { font-size: 22px; font-weight: 800; color: var(--c); padding-bottom: 8px; border-bottom: 2px solid var(--c); display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.group > h2 .cnt { font-family: var(--mono); font-weight: 400; font-size: 12px; color: var(--muted); }
+.srow { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 10px; }
+.srow > summary { list-style: none; cursor: pointer; padding: 14px 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: center; min-height: 44px; }
+.srow > summary::-webkit-details-marker { display: none; }
+.srow > summary .sn { font-family: var(--display); font-weight: 600; font-size: 19px; }
+.srow > summary .sq { grid-column: 1; font-size: 14px; color: var(--muted); }
+.srow > summary::after { content: "Open"; grid-row: 1 / span 2; grid-column: 2; font-family: var(--mono); font-size: 12px; color: var(--c); }
+.srow[open] > summary::after { content: "Close"; }
+.srow > .strat { border: 0; border-top: 1px solid var(--line); border-radius: 0 0 10px 10px; }
+.srow > .strat > .tag, .srow > .strat > h3 { display: none; }
+.extrow { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 12px 18px; font-size: 15px; }
+
+/* About */
+.about { display: grid; gap: 28px; max-width: 72ch; }
+.about section { display: grid; gap: 10px; }
+.about h2 { font-size: 24px; font-weight: 800; }
+.about ul { margin: 0; padding-left: 22px; display: grid; gap: 4px; }
+.lvltable { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.lvltable div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 4px; align-content: start; font-size: 15px; }
+.lvltable b { font-family: var(--display); font-size: 17px; }
+
+footer { padding-block: 24px 44px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); display: grid; gap: 14px; }
+footer .fgrid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 16px 28px; }
+footer .fgrid > div { display: grid; gap: 8px; align-content: start; }
+footer b { color: var(--ink); font-weight: 600; }
+footer a { color: var(--ink); }
+footer .cite { font-family: var(--mono); font-size: 12px; }
+.noscript { margin: 20px 0; padding: 14px 16px; border: 2px solid var(--ink); border-radius: 10px; background: var(--surface); }
+
+@media (max-width: 860px) {
+  .goals, .steps, .levels, .whygrid, .lvltable, footer .fgrid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  body { padding-inline: 16px; }
+  nav.top { position: static; margin-inline: -16px; padding-inline: 16px; }
+  nav.top a.nl { display: none; }
+  html { scroll-padding-top: 12px; }
+  .strat { padding: 18px; }
+  .q { flex-direction: column; gap: 4px; }
+  .prompts li { grid-template-columns: minmax(0, 1fr); }
+  .prompts .copy { justify-self: start; }
+  .tab { padding-inline: 12px; font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media print {
+  @page { margin: 16mm; }
+  body { background: #FFFFFF; color: #000000; font-size: 11pt; padding: 0; }
+  nav.top, .skip, .tabs, #panel-find, #panel-about, .filterbar, .copy, .steps { display: none !important; }
+  #panel-all { display: block !important; }
+  .group[hidden] { display: grid !important; }
+  .srow { break-before: page; border: 0; }
+  .srow > summary::after { content: none; }
+  .more > summary::after { content: none; }
+  .blocks, .today, .student, .science, .prompts li { break-inside: avoid; }
+  .levels, .whygrid { grid-template-columns: minmax(0, 1fr) !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<nav class="top" aria-label="Collection">
+  <div class="wrap">
+    <a class="brand" href="https://www.bentley.edu/centers/badavas-center/aipedagogy"><span aria-hidden="true">←</span> AI in Teaching and Learning <span class="coll">Badavas Center</span></a>
+    <a class="nl" href="aiandmetacognition.html">Metacognition guide</a>
+  </div>
+</nav>
+<main class="wrap" id="main" tabindex="-1">
+  <div class="brandbar">
+    <span class="plate"><img src="data:image/png;base64,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" alt="The Badavas Center for Innovation in Teaching and Learning" width="560" height="219"></span>
+    <span class="label">Faculty resource · Strategy deck</span>
+  </div>
+  <header class="hero">
+    <h1>AI Pedagogy <span class="mark">Strategy Deck</span></h1>
+    <p class="lede">Fourteen research-based strategies for designing assignments and activities where learning stays visible when students have AI. Tell us what you're trying to do and get a strategy you can try this week.</p>
+    <ol class="steps" aria-label="How to use this deck">
+      <li><span class="n" aria-hidden="true">1</span><span><b>Pick your goal</b><span class="d">What are you trying to do?</span></span></li>
+      <li><span class="n" aria-hidden="true">2</span><span><b>Choose a question</b><span class="d">The one closest to your situation.</span></span></li>
+      <li><span class="n" aria-hidden="true">3</span><span><b>Try today's version</b><span class="d">10–15 minutes, on one assignment.</span></span></li>
+    </ol>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Strategy deck">
+    <button class="tab" role="tab" id="tab-find" aria-controls="panel-find" aria-selected="true" tabindex="0" data-tab="find">Find a strategy</button>
+    <button class="tab" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="false" tabindex="-1" data-tab="all">All 14 strategies</button>
+    <button class="tab" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" tabindex="-1" data-tab="about">About the deck</button>
+  </div>
+
+  <section class="panel" id="panel-find" role="tabpanel" aria-labelledby="tab-find" tabindex="0">
+    <noscript><p class="noscript">This deck needs JavaScript to show the strategies. Turn it on in your browser, or ask the Badavas Center for a PDF copy.</p></noscript>
+    <div class="stepblock">
+      <div class="stephead"><span class="sn" aria-hidden="true">1</span><h2>What are you trying to do?</h2></div>
+      <div class="goals" id="goals"></div>
+    </div>
+    <div class="stepblock" id="step2" hidden>
+      <div class="stephead"><span class="sn" aria-hidden="true">2</span><h2 id="step2-h" tabindex="-1">Which of these do you want?</h2></div>
+      <div class="qs" id="qs"></div>
+    </div>
+    <div id="detail"></div>
+  </section>
+
+  <section class="panel" id="panel-all" role="tabpanel" aria-labelledby="tab-all" tabindex="0" hidden>
+    <div class="filterbar" role="group" aria-label="Show strategies for">
+      <span class="label">Show</span>
+      <button type="button" class="chip" data-goal="all" aria-pressed="true">All 14</button>
+    </div>
+    <div id="groups"></div>
+  </section>
+
+  <section class="panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0" hidden>
+    <div class="about">
+      <section>
+        <h2>What this deck is</h2>
+        <p>Generative AI is changing how students engage with content, practice skills and receive feedback. What matters now is not whether students use AI, but how learning is structured so that understanding, reasoning and transfer actually develop.</p>
+        <p>These strategies draw on decades of learning science to use AI in ways that promote retrieval, explanation, comparison, feedback and reflection: the conditions under which durable learning happens. They are designed to work across disciplines, course formats and class sizes.</p>
+      </section>
+      <section>
+        <h2>How to use it</h2>
+        <ul>
+          <li>Treat the strategies as design lenses, not rules.</li>
+          <li>Start with one existing assignment and apply one strategy.</li>
+          <li>Choose the level of change that fits your time and context.</li>
+          <li>Combine strategies where useful. They are designed to work together.</li>
+          <li>Use the prompts to guide your redesign, or to work with AI as a drafting partner.</li>
+        </ul>
+        <p>The goal is not to eliminate AI use, but to design assessments where learning remains visible, meaningful and defensible.</p>
+      </section>
+      <section>
+        <h2>Three levels of change</h2>
+        <div class="lvltable">
+          <div><span class="label">10–15 minutes</span><b>Try today</b><span>One small change to an assignment you already have.</span></div>
+          <div><span class="label">One assignment</span><b>This term</b><span>A deliberate tweak to one assignment this semester.</span></div>
+          <div><span class="label">Course level</span><b>Major redesign</b><span>Rebuild an assignment sequence or assessment structure.</span></div>
+        </div>
+      </section>
+      <section>
+        <h2>Research foundation</h2>
+        <p>The strategies draw on established learning sciences research on:</p>
+        <ul>
+          <li>Authentic and formative assessment</li>
+          <li>Retrieval practice and durable learning</li>
+          <li>Metacognition and self-regulated learning</li>
+          <li>Transfer of learning across contexts</li>
+          <li>Feedback, revision and improvement</li>
+          <li>Expert–novice differences in reasoning</li>
+          <li>Cognitive apprenticeship and coached practice</li>
+          <li>Situated learning in realistic contexts</li>
+        </ul>
+        <p>Key research traditions and scholars include Bransford et al., Chi, Dunlosky et al., Hattie, Nicol &amp; Macfarlane-Dick, and Schwartz &amp; Bransford. Each strategy names the specific studies behind it under "Why it works."</p>
+      </section>
+    </div>
+  </section>
+  <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+
+  <footer>
+    <div class="fgrid">
+      <div>
+        <p><b>The Badavas Center for Innovation in Teaching and Learning</b>, Bentley University. Part of the <a href="https://www.bentley.edu/centers/badavas-center/aipedagogy">AI in Teaching and Learning</a> resource collection.</p>
+        <p>Want to talk through a strategy for your course? <a href="mailto:BadavasCenter@bentley.edu">BadavasCenter@bentley.edu</a></p>
+        <p>This deck offers pedagogical guidance, not university policy. For Bentley's official AI guidelines, approved tools and academic integrity resources, see <a href="https://www.bentley.edu/atc/ai/guidelines">Guidelines for Responsible Use of AI</a>.</p>
+      </div>
+      <div>
+        <p><b>Version 2.0</b> · Web edition, October 2026</p>
+        <p class="cite">Suggested citation: Badavas Center for Innovation in Teaching and Learning. (2026). <i>AI pedagogy strategy deck</i> (Version 2.0). Bentley University.</p>
+        <p>© 2026 Bentley University</p>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  const GOALS = [
+    { id: "outsourcing", n: 1, name: "I'm worried students are outsourcing work to AI", short: "Keep the thinking with students", c: "g1" },
+    { id: "deepen", n: 2, name: "I want AI to actually deepen learning, not shortcut it", short: "Use AI to deepen learning", c: "g2" },
+    { id: "time", n: 3, name: "I want to save time and teach better", short: "Save time, teach better", c: "g3" }
+  ];
+
+  // Level blocks: a string is a paragraph, an array is a bullet list, {ol:[...]} is a numbered list.
+  const S = [
+    { id: "ai-stress-test", goal: "outsourcing", name: "AI Stress-Test for Assignments",
+      q: "Check whether AI can already complete your assignment too easily",
+      use: "Use this when you suspect AI can complete your assignment better than your students can — and you want to fix that before the semester starts.",
+      what: "Run your assignment through AI first. If it can produce a convincing response, the task may be assessing output rather than disciplinary thinking.",
+      why: ["Exposes assignments that AI can answer too easily", "Highlights where real thinking is missing", "Helps you redesign for judgment, context, and authentic reasoning"],
+      when: ["Before each major assignment, especially ones with open-ended prompts, essay questions, or research tasks"],
+      science: "Research on desirable difficulties (Bjork, 1994) shows that tasks requiring students to generate, explain, and apply knowledge produce more durable learning than tasks with a single correct output. The stress-test isn't a threat diagnostic; it's a learning design diagnostic with deep roots in the science of what makes assessment meaningful.",
+      today: ["Paste your assignment prompt into the GenAI tool of your choice. Read the output. Ask: would this receive a B or better in my course? If yes, add one friction point — a specific class reading, a personal observation, or a decision the student must defend in writing."],
+      term: ["Revise the prompt to include course-specific data or a guest speaker insight, a required personal judgment call, or a multi-step structure where students show reasoning at each stage — not just the final answer."],
+      major: ["Audit all major assignments using the stress-test. Build an assignment sequence where each task demands synthesis, judgment, and transfer that AI cannot replicate — and where each task builds on authentic student thinking from the prior one."],
+      prompts: [
+        "Here is my assignment prompt: [paste]. Complete it as a student would. Then tell me what disciplinary thinking, if any, this required of you.",
+        "What changes to this prompt would make it harder for an AI to produce a high-quality response? Give me 3 specific suggestions.",
+        "Generate a version of this assignment that requires the student to apply a specific framework from [course topic] to a real-world case I provide."
+      ],
+      student: "This assignment has been designed so that a strong response requires your specific reasoning, judgment, and engagement with our course material. You are welcome to use AI tools for brainstorming or feedback, but your submission must reflect decisions that are genuinely yours — and you will be asked to explain those decisions." },
+
+    { id: "process-visible-assignments", goal: "outsourcing", name: "Multi-Step, Process-Visible Assignments",
+      q: "Make student thinking visible across drafts, decisions, and revisions",
+      use: "Use this when AI can help generate content, but you want to assess how students made decisions and revisions.",
+      what: "Even if students use AI to produce parts of the final product, process-visible assignments require them to explain how the work developed.",
+      why: ["Drafts and reflections make reasoning transparent", "Students think more deliberately about their decisions"],
+      when: ["When AI may assist with the work, and you want to assess how students developed their ideas"],
+      science: "Research in formative assessment (Black & Wiliam, 1998) and metacognition (Schraw, 1998) shows that making thinking visible and revising based on feedback improves learning outcomes.",
+      today: ["Add one structured process checkpoint to an existing assignment. For example, require students to submit a brief outline, concept map, or analytical plan before the final draft. Include one required reflection question such as “What key decision did you make and why?” or “What alternatives did you consider?” This makes at least part of the thinking visible without redesigning the whole task."],
+      term: ["Redesign the assessment to require students to annotate their revisions by explaining what changed and why. Add a short decision log where students identify their approach, the reasoning behind it, and how feedback shaped their final submission. Consider making process worth a small percentage of the grade to signal its importance."],
+      major: ["Restructure the assignment as a staged workflow where each phase requires visible reasoning. For example: problem framing → early analysis → feedback loop → revised submission → meta-reflection. Embed checkpoints that ask students to justify decisions, explain trade-offs, and reflect on how their thinking evolved. Evaluate not only the final product, but the clarity of reasoning, quality of revisions, and depth of reflection across stages."],
+      prompts: [
+        "Break this assignment into 3–4 stages that require students to show their thinking (e.g., outline, draft, revision notes, reflection). For each stage, suggest one question that requires justification of decisions.",
+        "Generate a simple decision log template students could complete while working. It should require them to explain: what options they considered, what they chose, and why.",
+        "What reflection questions could I add that would require students to explain how their thinking changed from draft to final submission?",
+        "Suggest one checkpoint where students must explain a key trade-off, assumption, or judgment they made in completing this assignment.",
+        "How could I make part of the grading criteria focus on quality of reasoning and revision, not just the final product?"
+      ],
+      student: "This assignment is designed to help you build real understanding of the concepts in this course. AI tools may be used for brainstorming or feedback where permitted, but your work should reflect your own reasoning and decisions. You will be asked to show how your ideas developed across drafts. The goal is not just to produce a strong final answer, but to strengthen your ability to think, analyze, and apply what you’re learning. If AI replaces that thinking, it also replaces an important part of your growth." },
+
+    { id: "interactive-defenses", goal: "outsourcing", name: "Interactive Defenses",
+      q: "Have students explain and defend their reasoning in real time",
+      use: "Use this when AI can generate a polished submission — but you want to hear how the student thinks.",
+      what: "Even if AI assists with drafting or analysis, students must still be able to explain and defend their reasoning. Short oral defenses, live walkthroughs, or applied follow-up questions shift assessment from static output to real-time thinking.",
+      why: ["Discourages shallow reliance on AI-generated responses", "Strengthens conceptual understanding through explanation", "Requires students to articulate decisions in their own words"],
+      when: ["When assignments could be AI-generated", "For case analyses or applied projects", "When explanation and judgment are central learning goals"],
+      science: "Research on retrieval practice, often referred to as the testing effect, shows that actively recalling and explaining information improves long-term retention more than re-studying (Roediger & Karpicke, 2006; Karpicke & Blunt, 2011).",
+      today: ["Add one brief follow-up question after submission that students must answer verbally or in writing, such as “Explain how you arrived at your conclusion” or “What alternative approach did you reject, and why?” Students can later discuss this with peers and analyze each other’s responses."],
+      term: ["Incorporate a short 3–5 minute oral defense (in class or recorded) where students walk through their reasoning, key decisions, and assumptions. Provide 1–2 probing follow-up questions focused on judgment or trade-offs."],
+      major: ["Design assignments that culminate in structured viva-style check-ins, scenario walk-throughs, or applied extensions where students must adapt their solution to a new context in real time. Evaluate clarity of reasoning, depth of understanding, and ability to respond to questions — not just the original submission."],
+      prompts: [
+        "Analyze this assignment prompt and identify where students must exercise judgment rather than summarize content. Suggest two follow-up oral questions that would reveal whether they truly understand their reasoning.",
+        "If a student used AI to complete this assignment, which parts would be most likely outsourced? Design short defense questions that would expose shallow understanding.",
+        "Create three real-time scenario variations that would require students to adapt their original answer and explain how their reasoning changes.",
+        "What probing questions could I ask that require students to justify assumptions, trade-offs, or limitations in their work?",
+        "Given these learning objectives: [paste outcomes], design brief oral defense questions that directly assess those outcomes.",
+        "Create a short rubric for assessing an oral defense that evaluates clarity of reasoning, conceptual accuracy, and ability to respond to follow-up questions."
+      ],
+      student: "This assignment may include a short explanation or defense of your reasoning. You should be able to clearly explain the decisions, assumptions, and interpretations reflected in your work. Being able to articulate your thinking is an important part of developing mastery in this field. The goal is not just to produce an answer, but to understand and defend it." },
+
+    { id: "ai-as-starting-point", goal: "outsourcing", name: "Use AI as a Starting Point",
+      q: "Have students start with AI output and improve it using disciplinary judgment",
+      use: "Use this when AI can produce a competent draft — and you want students to demonstrate expertise beyond it.",
+      what: "AI can often generate a clear, well-structured response to many assignments. Instead of prohibiting its use, make it visible and treat it as a baseline.",
+      why: ["Requires students to define what counts as high-quality work in the discipline", "Makes generic reasoning visible and improvable", "Encourages deeper engagement with evidence and frameworks"],
+      when: ["In writing, policy, case, or analytical assignments", "When judgment, nuance, and application are key outcomes", "When you want students to practice professional-level refinement"],
+      science: "Actively critiquing, revising, and improving material strengthens understanding more than passive review (Fiorella & Mayer, 2015). Studies on feedback and revision demonstrate that evaluating and refining responses promotes deeper conceptual learning and transfer (Dunlosky et al., 2013).",
+      today: ["Select one existing assignment and ask students to generate an AI response to it. Then add one explicit requirement to the prompt:", ["“Identify two limitations in the AI response using course concepts.”", "“Strengthen one section by applying a framework from this course.”"], "Make clear that students are graded on how they improve the draft, not on reproducing it."],
+      term: ["Redesign one assignment into three stages:", { ol: ["Baseline analysis: annotate where an AI draft is generic or lacking rigor.", "Disciplinary elevation: revise using course concepts, readings, and relevant context.", "Justification: explain what was changed and how the revision demonstrates stronger reasoning."] }, "Grade both critique and improvement."],
+      major: ["Redesign the assignment so AI-level competence is the baseline, not the goal. Structure the task around three expectations:", ["Define what expert-level work looks like in your discipline", "Require students to elevate a baseline draft using course frameworks, contextual judgment, and evidence", "Assess depth of reasoning, nuance, and trade-off analysis — not just clarity or completeness"]],
+      prompts: [
+        "Generate a competent but generic response to this assignment prompt. What would distinguish this from expert-level work in my discipline?",
+        "Analyze this AI-generated draft. Where does it lack nuance, contextual judgment, or disciplinary precision?",
+        "Revise this assignment so students must apply specific course frameworks or readings to strengthen a baseline response.",
+        "What rubric criteria would clearly differentiate between generic synthesis and disciplinary mastery?",
+        "Design a short reflection question that requires students to explain how their revision exceeds AI-level competence.",
+        "Suggest one requirement that would force students to incorporate course-specific data, discussions, or professional standards that AI would not naturally include."
+      ],
+      student: "This assignment begins with an AI-generated draft as a starting point. Your task is to evaluate and improve it using course concepts, evidence, and disciplinary standards. You are responsible for the reasoning, interpretations, and decisions reflected in your final submission. Mastery in this field means going beyond a competent answer to demonstrate depth, nuance, and sound judgment." },
+
+    { id: "anchor-to-course-context", goal: "outsourcing", name: "Anchor to Your Course Context",
+      q: "Make student work reflect your specific course materials, frameworks, and discussions",
+      use: "Use this when AI can generate a general answer — and you want student work to reflect your specific course.",
+      what: "AI can generate well-structured responses to many broad prompts. To ensure assignments assess authentic engagement, design tasks that require students to draw directly on materials, discussions, datasets, cases, or guest speakers unique to your course.",
+      why: ["Requires direct engagement with course materials", "Makes generic responses insufficient", "Strengthens transfer from theory to context"],
+      when: ["In writing, case, policy, or analytical courses", "When application of course frameworks is a learning goal", "When you want student work to reflect classroom dialogue and shared context"],
+      science: "Studies on transfer show that learning strengthens when students apply concepts to specific, authentic situations rather than abstract summaries (Bransford & Schwartz, 1999). Requiring course-specific application supports deeper understanding and contextual reasoning.",
+      today: ["Add a short transfer step to an existing assignment:", ["After applying a course framework to a class case, students prompt AI to generate a new scenario in a different context.", "They apply the same course framework to the new scenario.", "They answer one reflection question: “What changed when the context changed?”"], "This keeps anchoring intact while using AI to expand application."],
+      term: ["Structure one assignment around three phases:", { ol: ["Anchor: students apply a named course framework, reading, or dataset to a class-specific case.", "Expand with AI: students use AI to generate a contrasting scenario, a different industry or stakeholder perspective, or a variation with altered constraints.", "Apply and reflect: students reapply the framework and explain how context changes interpretation, where the framework holds, and where it shows limits."] }],
+      major: ["Design assignments around contextual transfer:", ["Begin with deep application to course-specific material", "Require AI-generated alternative cases or perspectives", "Assess students on how effectively they transfer course concepts across varied contexts", "Include reflection on the limits of both AI generalization and framework applicability"]],
+      prompts: [
+        "Revise this assignment so students must explicitly apply at least two named course frameworks or readings.",
+        "What requirement would make this assignment impossible to complete without engaging with our class materials or discussions?",
+        "What distinguishes a generic response from one grounded in the specific tools and standards of this course?",
+        "Create three new scenarios in different industries or settings where this course concept could apply.",
+        "Generate a variation of this case with different stakeholders, incentives, or constraints that would test transfer of the same framework.",
+        "What kinds of contexts would challenge or expose the limits of this model?",
+        "Draft rubric language that rewards depth of course-specific integration rather than general topic knowledge.",
+        "Design a prompt that requires students to compare how this concept operates across two different contexts.",
+        "What reflection question would require students to explain how context shaped their interpretation?",
+        "How can I structure this assignment so AI generates alternative contexts, but students supply the disciplinary reasoning?"
+      ],
+      student: "This assignment is designed to help you practice using the tools of this course in different contexts. While AI can generate examples or alternative scenarios, your analysis should reflect your understanding of the readings, discussions, and frameworks we have explored together. Mastery means being able to apply course concepts thoughtfully and adapt them as situations change." },
+
+    { id: "ai-supported-retrieval-practice", goal: "deepen", name: "AI-Supported Retrieval Practice",
+      q: "Have students use AI to create retrieval practice instead of just rereading notes",
+      use: "Use this when you want AI to strengthen memory and retention — not replace thinking.",
+      what: "Students prompt AI to create practice questions based on course material and then use those questions to self-test. The learning happens not in reading the answers, but in attempting to retrieve information from memory before checking.",
+      why: ["Retrieval strengthens long-term retention", "Self-testing is more effective than rereading", "Generating varied questions increases exposure to key ideas"],
+      when: ["In content-heavy courses", "Before exams or cumulative assessments", "When students rely heavily on rereading notes"],
+      science: "Research on retrieval practice shows that actively recalling information improves long-term retention more than re-studying (Roediger & Karpicke, 2006). Comprehensive reviews identify practice testing as one of the most effective learning strategies for durable learning (Dunlosky et al., 2013). The benefit comes from retrieval effort, not from reviewing answers.",
+      today: ["Have students prompt AI: “Generate 10 short-answer questions based on [today’s topic] that require recall, not definition recognition.”", "Students attempt to answer from memory before checking responses."],
+      term: ["Build retrieval cycles into your weekly structure:", ["Students generate practice questions from readings", "Swap questions with peers", "Attempt answers before consulting notes", "Use AI only after attempting retrieval"], "Make retrieval part of participation or low-stakes grading."],
+      major: ["Structure exam preparation around retrieval loops:", { ol: ["Students prompt AI to generate cumulative practice questions.", "Students answer from memory without notes.", "AI provides feedback only after the attempt.", "Students reflect on gaps in understanding."] }, "Evaluate students on completion of retrieval cycles rather than answer perfection."],
+      prompts: [
+        "Generate 15 short-answer questions on this topic that require explanation or application, not simple definition recall.",
+        "Rewrite these lecture notes as retrieval practice questions that require students to recall key ideas from memory.",
+        "Create cumulative practice questions that mix concepts from the past three weeks.",
+        "Generate scenario-based questions that require students to apply Concept X in a new context.",
+        "Convert these multiple-choice questions into open-ended recall questions.",
+        "Design practice questions that require students to explain why a concept works, not just what it is.",
+        "Create three progressively harder retrieval questions for this topic.",
+        "Generate questions that test common misconceptions about this concept.",
+        "Create short-answer questions that require students to compare and contrast two related concepts.",
+        "Design a weekly retrieval set that integrates older material with current topics."
+      ],
+      student: "This course uses retrieval practice to strengthen long-term learning. You may use AI to generate practice questions, but the learning occurs when you attempt to answer from memory before checking your work. Research shows that effortful recall improves retention more than rereading notes. Use AI to create practice opportunities, not to supply answers. The goal is to strengthen your understanding and ability to apply concepts independently." },
+
+    { id: "prompt-the-why", goal: "deepen", name: "Prompt the Why",
+      q: "Have students explain the “why” behind their answers and decisions",
+      use: "Use this when you want AI to deepen understanding by prompting explanation, not providing answers.",
+      what: "AI can generate solutions quickly, but learning strengthens when students explain their reasoning. Instead of asking AI for answers, students use it to generate “why” questions about their own work.",
+      why: ["Explaining reasoning strengthens conceptual understanding", "Articulating “why” promotes deeper processing", "Reduces passive reliance on AI-generated answers"],
+      when: ["After problem-solving or analytical tasks", "In writing, design, or case-based assignments", "When students can produce answers using AI but struggle to explain reasoning"],
+      science: "Research on self-explanation shows that prompting learners to explain why a solution works improves understanding and transfer (Chi et al., 1989). Studies on elaborative interrogation demonstrate that answering “why” questions strengthens conceptual learning (Pressley et al., 1987; Dunlosky et al., 2013). The benefit comes from generating explanations, not reviewing them.",
+      today: ["After students complete an assignment, ask them to prompt AI: “Generate five ‘why’ questions about this solution that probe underlying assumptions and decisions.”", "Students respond to the questions in writing without revising their original answer."],
+      term: ["Build explanation checkpoints into assignments:", { ol: ["Students complete the task.", "Students use AI to generate probing “why” questions.", "Students respond to those questions in a short reasoning memo."] }, "Grade clarity of explanation, not just correctness of the final product."],
+      major: ["Structure assignments around explanation loops:", ["Require students to submit both a solution and a reasoning narrative", "Use AI to generate deeper follow-up questions", "Ask students to identify assumptions and alternative interpretations", "Include rubric criteria assessing quality of reasoning articulation"]],
+      prompts: [
+        "Generate five probing “why” questions that uncover the assumptions behind this solution.",
+        "What reasoning steps are implied but not explicitly stated in this response?",
+        "Create follow-up questions that would test whether a student truly understands why this approach works.",
+        "What trade-offs are embedded in this decision? Generate “why” questions that require justification of those trade-offs.",
+        "Under what conditions would this reasoning fail? Create questions that probe its limits.",
+        "Generate “why” questions that require explicit reference to named course frameworks or readings.",
+        "Create questions that require the student to explain how this reasoning would change in a different context.",
+        "What alternative approaches could have been taken? Generate questions asking why those alternatives were not chosen.",
+        "Generate questions that require the student to justify their use of evidence or data in this response.",
+        "Create reflection questions that ask the student to explain how their thinking evolved while solving this problem."
+      ],
+      student: "In this course, you will be asked to explain the reasoning behind your decisions. AI may help generate thoughtful questions, but the intellectual work lies in your explanations. When you articulate why something works, you strengthen your understanding and ability to apply it in new contexts. The focus is on developing clarity of thought, not just producing correct answers." },
+
+    { id: "critique-the-ai-reasoning", goal: "deepen", name: "Critique the AI’s Reasoning",
+      q: "Have students evaluate AI’s logic instead of passively accepting it",
+      use: "Use this when students may rely on AI answers — and you want them to evaluate the reasoning behind them.",
+      what: "AI can generate fluent explanations and step-by-step solutions, but fluency does not guarantee sound reasoning. In this strategy, students prompt AI to show its reasoning process, then critically analyze it.",
+      why: ["Shifts students from passive consumption to active evaluation", "Develops critical thinking about reasoning quality", "Makes AI a model to analyze, not an authority to trust"],
+      when: ["In problem-solving or analytical courses", "When students tend to copy AI explanations", "When you want to strengthen evaluation and diagnostic skills"],
+      science: "Research on worked examples shows that analyzing solution steps improves learning when students actively process the reasoning rather than passively reviewing it (Chi et al., 1989). Studies on generative learning demonstrate that explaining, correcting, and critiquing reasoning strengthens conceptual understanding (Fiorella & Mayer, 2015).",
+      today: ["Select one problem, case, or reading and ask students to generate an AI explanation or step-by-step solution. Then require them to mark where the reasoning is strong, where it is incomplete, and where it may rely on hidden assumptions. Ask one short follow-up question such as “Which step would you challenge most, and why?” This introduces critique without redesigning the full assignment."],
+      term: ["Build a reasoning-critique stage into one existing assignment. After completing the task, students use AI to generate a parallel explanation or solution path. They then annotate it by identifying:", ["where the logic is accurate", "where it oversimplifies the concept", "where evidence or course frameworks are missing", "how the reasoning could be strengthened"], "Require a brief written response explaining how their own thinking differs from or improves on the AI’s reasoning."],
+      major: ["Design assignments where AI-generated reasoning becomes material for analysis. Students evaluate assumptions, evidence, and logic, compare alternative paths, and revise the reasoning to better reflect disciplinary standards. Assess the quality of critique and improvement, not just the correctness of the final answer."],
+      prompts: [
+        "Walk through your reasoning for this problem step by step. After each step, explain what assumption you are relying on and whether that assumption holds in this context.",
+        "Generate a step-by-step solution to this problem, then identify the two steps most likely to contain errors or oversimplifications when applied to a real disciplinary context.",
+        "Where in this explanation is the reasoning circular, incomplete, or dependent on unstated assumptions?",
+        "Generate two alternative reasoning paths for this problem. What would a disciplinary expert find stronger or weaker about each?",
+        "What evidence would a practitioner in this field require before accepting this line of reasoning?",
+        "Explain this concept as if presenting it to a skeptical peer reviewer. Where would they push back?",
+        "What course frameworks or disciplinary standards are missing from this explanation that a strong student response would include?"
+      ],
+      student: "In this course, you will be asked to do more than use AI to find answers — you will be asked to evaluate whether the reasoning behind those answers is sound. Fluent explanations are not always correct ones. Part of developing expertise in this field means being able to identify where an argument is strong, where it oversimplifies, and where it breaks down. When you critique AI reasoning carefully, you are practicing exactly the kind of analytical thinking that defines mastery in this discipline." },
+
+    { id: "ai-productive-failure", goal: "deepen", name: "AI & Productive Failure",
+      q: "Have students struggle productively before comparing their thinking to AI",
+      use: "Use this when you want students to build genuine understanding before AI shows them a polished answer.",
+      what: "When students attempt a problem on their own before seeing any solution, the effort of that attempt — even an incomplete one — primes them to learn more deeply from what comes next. Comparing their approach to an AI-generated one then becomes an analytical exercise, not a shortcut.",
+      why: ["Prior attempts activate relevant knowledge and expose genuine gaps", "Comparison with AI output becomes a diagnostic tool, not a replacement for thinking", "Students develop a clearer sense of what strong disciplinary reasoning looks like"],
+      when: ["In problem-solving, case-based, or analytical courses", "When students tend to go straight to AI before attempting work themselves", "When you want the comparison process itself to be the learning"],
+      science: "Research on productive failure shows that students who attempt problems before receiving instruction — even when their initial attempts are incomplete — develop significantly stronger conceptual understanding and transfer than those who receive instruction first (Kapur, 2016). The struggle activates prior knowledge and surfaces gaps that make subsequent learning more meaningful.",
+      today: ["Before introducing a solution or allowing AI use, give students a problem and ask them to attempt it independently for 10 minutes. Then have them generate an AI response to the same prompt and write two sentences: one identifying where their approach differed and one explaining which reasoning they find stronger and why. This can work as an in-class activity or a low-stakes homework addition."],
+      term: ["Before introducing a solution or allowing AI use, give students a problem and ask them to attempt it independently for 10 minutes. Then have them generate an AI response to the same prompt and write two sentences: one identifying where their approach differed and one explaining which reasoning they find stronger and why. This can work as an in-class activity or a low-stakes homework addition."],
+      major: ["Build the struggle-first sequence into your core assessment structure. Design problems that are intentionally complex enough that no student will fully solve them on the first attempt. Require students to document their reasoning process during the attempt, then conduct a structured comparison with AI output using course frameworks as the evaluative lens. Assess quality of initial reasoning, depth of comparative analysis, and the sophistication of what students identify as the gap between their thinking and disciplinary expertise."],
+      prompts: [
+        "Here is a student's initial attempt at this problem: [paste]. Generate a stronger solution and identify specifically where the student's reasoning diverged from a more rigorous approach.",
+        "What aspects of this problem are most likely to expose gaps in student understanding on a first attempt? How would you design it to make those gaps visible?",
+        "Generate a solution to this problem, then produce three comparison questions that would require a student to analyze the differences between their approach and yours.",
+        "What would a rubric look like that grades the quality of a student's comparative reflection rather than just the correctness of their initial attempt?",
+        "Design a structured comparison template students could use to analyze their own reasoning against an AI-generated solution.",
+        "What are the most instructive differences likely to emerge between a novice student attempt and an AI response to this type of problem?",
+        "Generate a reflection prompt that asks students to explain what the comparison process revealed about their own understanding of this concept."
+      ],
+      student: "For this assignment, you are asked to attempt the problem on your own before using any AI tools. Your first attempt does not need to be perfect — in fact, the places where you get stuck or make uncertain decisions are exactly where the most important learning happens. Once you have submitted your attempt, you will compare your reasoning to an AI-generated response. The goal of that comparison is not to see who got it right, but to develop a clearer understanding of what rigorous thinking in this discipline actually looks like — and where your own reasoning is already strong." },
+
+    { id: "teach-the-ai", goal: "deepen", name: "Teach-the-AI",
+      q: "Strengthen mastery by having students teach a concept clearly enough for AI to understand it",
+      use: "Use this when you want students to deepen mastery by explaining concepts, not just recognizing or reproducing them.",
+      what: "Explaining a concept to someone else — even an AI — forces a level of clarity that reading, note-taking, and even problem-solving rarely demand. Students take the role of teacher, prompting AI to respond as a confused learner, and refine their explanation until the AI can demonstrate accurate understanding.",
+      why: ["Teaching requires more precise conceptual organization than answering questions", "Identifying why an explanation fails forces students to confront gaps in their own understanding"],
+      when: ["When students can recognize correct answers but struggle to explain underlying principles", "When you want to move students from surface familiarity to genuine mastery"],
+      science: "Research on the protégé effect shows that students who prepare to teach material develop stronger understanding than those who study it for their own recall (Nestojko et al., 2014). Studies on elaborative explanation demonstrate that generating clear, accurate accounts of how and why something works strengthens conceptual organization and long-term retention (Chi et al., 1989).",
+      today: ["Ask students to open an AI tool and prompt it to play a confused student who has just encountered the concept for the first time. Students explain the concept, read the AI's response, and revise their explanation at least once based on where the AI's understanding is still incomplete or inaccurate. They submit their final explanation with one sentence describing what they had to clarify and why."],
+      term: ["Build a teach-the-AI stage into one existing assignment. After completing the core task, students hold a structured teaching dialogue with AI — prompting it to ask clarifying questions, identifying where their explanation broke down, and revising until the AI can accurately apply the concept to a new example. Students submit the dialogue log with a short reflection on what the process revealed about their own understanding."],
+      major: ["Design a cumulative teaching portfolio where students document their teach-the-AI dialogues across the semester. For each major concept, students submit their initial explanation, the AI's responses, their revisions, and a final reflection identifying what the iterative process forced them to clarify. Assess the quality of explanation, the precision of revision, and the depth of metacognitive reflection — not just whether the final explanation is correct."],
+      prompts: [
+        "Play the role of a student who has just encountered [concept] for the first time and has a partial but incomplete understanding of it. Respond to my explanation by asking clarifying questions that reveal where my account is still unclear or imprecise.",
+        "Here is a student's explanation of this concept: [paste]. Respond as a confused learner and identify the two places where the explanation left you most uncertain.",
+        "After receiving a student's explanation, generate a follow-up question that tests whether they understand the underlying principle rather than just the surface definition.",
+        "What are the most common points of confusion students have when explaining this concept? Use those to design a teach-the-AI dialogue sequence.",
+        "Generate a rubric for assessing the quality of a teach-the-AI dialogue that evaluates conceptual accuracy, clarity of explanation, and quality of revision across iterations.",
+        "Design a reflection prompt that asks students to identify the specific moment in their teaching dialogue where they realized their explanation needed to change — and what that revealed about their understanding.",
+        "What would a strong final explanation of this concept look like compared to a surface-level one? Generate both so students have a model for what they are aiming toward."
+      ],
+      student: "In this assignment, you will take on the role of teacher rather than student. Your task is to explain a course concept to AI clearly enough that it can accurately apply that concept to a new example. This is harder than it sounds — AI will reveal gaps in your explanation that you may not have noticed, and you will need to revise until your account is precise and complete. The goal is not to produce a perfect explanation on the first try, but to develop the kind of deep, flexible understanding that only comes from having to articulate your thinking with real clarity. If you find yourself struggling to explain something, that struggle is exactly where the learning is." },
+
+    { id: "ai-assisted-rubric-drafting", goal: "time", name: "AI-Assisted Rubric & Question Drafting",
+      q: "Use AI to help you draft rubrics and question banks more efficiently",
+      use: "Use this when you want to save design time without sacrificing the quality or intentionality of your assessments.",
+      what: "Designing rubrics and question banks from scratch is time-consuming, and the first draft is rarely the hardest part. AI can generate a credible starting structure quickly, freeing you to focus your expertise where it matters most: refining criteria to reflect disciplinary standards, eliminating ambiguity, and aligning with your actual learning goals.",
+      why: ["Shifting from blank page to critical editor is cognitively easier and often produces stronger final products", "AI-generated drafts surface criteria and questions you might refine, reject, or build on"],
+      when: ["When building question banks for exams, quizzes, or retrieval practice", "When rubric criteria feel generic or misaligned with your actual learning goals"],
+      science: "Studies on backward design demonstrate that aligning assessment criteria directly to learning objectives — rather than to task completion — produces more meaningful evaluation of student understanding (Wiggins & McTighe, 2005). Using AI to generate a draft externalizes the design process, making it easier to identify misalignments between criteria and goals that might otherwise go unnoticed when building from scratch.",
+      today: ["Paste one existing assignment prompt into an AI tool and ask it to generate a draft rubric with three to four criteria. Read the output and ask: do these criteria reflect what I actually care about in this discipline, or do they reward general task completion? Revise at least one criterion to better reflect disciplinary judgment. This single pass often reveals misalignments in existing rubrics that are easy to miss when working from a template."],
+      term: ["Use AI to generate a draft question bank for one upcoming assessment. Prompt it to produce questions at varying levels of cognitive demand — recall, application, and analysis. Review the output against your learning objectives, discard questions that assess surface knowledge when depth is the goal, and refine at least three questions to require the kind of disciplinary reasoning your course develops. Use the bank for exams, retrieval practice, or in-class discussion."],
+      major: ["Build AI-assisted rubric and question design into your full course assessment cycle. For each major assignment, generate a draft rubric, stress-test it by running sample student responses through it, and refine criteria until they clearly differentiate between surface and deep performance. Develop a cumulative question bank across the term that maps explicitly to learning objectives, with questions categorized by concept and cognitive level. Use this bank to ensure cumulative assessments reflect the full arc of the course."],
+      prompts: [
+        "Here is my assignment prompt: [paste]. Generate a rubric with four criteria that assess disciplinary reasoning and judgment, not just task completion. For each criterion, write descriptors for three performance levels.",
+        "Review this rubric: [paste]. Identify any criteria that could reward a polished AI-generated response even if the student demonstrated no original thinking. Suggest revisions.",
+        "Generate 20 questions on [topic] at three levels of cognitive demand: recall, application, and analysis. Flag which questions would be easiest for AI to answer well.",
+        "Here are my learning objectives: [paste]. Generate rubric criteria that map directly to each objective and would clearly differentiate between a student who understands the concept deeply and one who understands it superficially.",
+        "What criteria would distinguish a response that demonstrates disciplinary mastery from one that demonstrates only general competence in this subject area?",
+        "Generate a set of application questions for this concept that require students to use course-specific frameworks rather than general knowledge.",
+        "Review these exam questions: [paste]. Which ones could be answered well without engaging with course material? Suggest revised versions that require course-specific reasoning."
+      ],
+      studentNote: "This is mainly a faculty-facing tool. If you share AI-drafted rubric criteria with students as part of a transparency or co-design exercise, consider this framing:",
+      student: "The criteria for this assignment were developed to reflect what strong disciplinary thinking actually looks like in this field — not just whether you completed the task. Before you begin, read each criterion carefully and ask yourself: does my current plan produce work that meets the highest standard described? If not, that is useful information before you start, not after." },
+
+    { id: "role-play-simulations", goal: "time", name: "Role-Play & Scenario Simulations",
+      q: "Have students practice realistic professional interactions in low-stakes simulations",
+      use: "Use this when students need practice applying course concepts to human, contextual situations.",
+      what: "AI can play a convincing stakeholder (a resistant patient, a skeptical client, an evasive policymaker), giving students repeated opportunities to practice professional skills in a low-stakes environment before they encounter them in high-stakes ones.",
+      why: ["Simulated practice builds the judgment and communication skills that content knowledge alone cannot develop", "Students can rehearse difficult professional interactions repeatedly without real-world consequences"],
+      when: ["When students need practice applying course concepts to human, contextual situations"],
+      science: "Studies on simulation-based learning show that practicing in realistic scenarios improves both performance and confidence in professional settings, particularly when simulations require students to adapt in real time rather than follow a script (McGaghie et al., 2010).",
+      today: ["Choose one stakeholder type central to your discipline — a patient, client, community member, or decision-maker — and ask students to prompt AI to play that role in a brief interaction. Give the AI a specific constraint: it should be skeptical, have incomplete information, or hold a position the student must respectfully challenge. Afterward, students write two sentences: what they would do differently, and why. No assignment redesign needed; it works in class or as low-stakes homework."],
+      term: ["Build a structured simulation into one existing applied assignment. Define the stakeholder, their goals, constraints, and likely objections. Students conduct a multi-turn interaction with AI in that role, then submit a debrief identifying how the stakeholder's perspective shaped the interaction, where their own communication or reasoning broke down, and what they would change in a real professional encounter. Grade the quality of reflection and professional reasoning, not just the outcome of the simulation."],
+      major: ["Design a simulation sequence that escalates in complexity across the term. Early simulations involve straightforward stakeholder interactions; later ones introduce conflicting interests, ethical tensions, or time pressure. Students document each simulation with a structured debrief that connects their performance to course frameworks and professional standards, and build a final reflective portfolio analyzing how their judgment and communication evolved."],
+      prompts: [
+        "Play the role of a [patient/client/policymaker] with the following characteristics: [describe]. Respond as this person would in a real interaction — be skeptical where appropriate, ask questions that reflect your priorities, and do not make the conversation easy for the student.",
+        "You are a community stakeholder who is resistant to the proposal this student is presenting. Push back on the reasoning, ask for evidence, and raise the concerns this type of stakeholder would realistically have.",
+        "Design a simulation scenario for [course context] where students must navigate a stakeholder who has conflicting priorities and incomplete information. Include a description of the stakeholder, their goals, and the constraints the student is working within.",
+        "After this simulation exchange: [paste], identify two moments where the student's communication or reasoning could have been stronger from a professional standpoint. Explain what a more experienced practitioner might have done differently.",
+        "Generate three variations of this stakeholder scenario with different levels of complexity — one straightforward, one with competing interests, and one with an ethical dimension.",
+        "What are the most common professional missteps students make in this type of stakeholder interaction? Build those into the simulation as natural pressure points.",
+        "Design a structured debrief template students could use after a simulation that connects their performance to course frameworks and professional standards."
+      ],
+      student: "In this assignment, you will use AI to simulate a realistic professional interaction with a stakeholder central to your field. This is not a performance exercise, it is a thinking exercise. The goal is to practice applying course concepts in a context that resembles the complexity of real professional situations: where the other person has their own priorities, where information is incomplete, and where there is no single correct answer. Pay attention to where the conversation becomes difficult. Those moments are where the most important learning happens. After the simulation, you will reflect on your reasoning and communication using the frameworks we have developed in this course." },
+
+    { id: "contrasting-cases", goal: "time", name: "AI-Generated Contrasting Cases",
+      q: "Sharpen students’ understanding by comparing similar-but-different cases",
+      use: "Use this when you want students to develop precise conceptual understanding by analyzing differences, not just identifying correct answers.",
+      what: "AI can rapidly generate pairs or sets of contrasting examples that would take you significant time to construct, giving students rich material for the comparative analysis that builds conceptual precision.",
+      why: ["Comparison forces students to identify the features that actually distinguish one case from another", "Analyzing variation develops flexible knowledge that transfers to novel situations"],
+      when: ["In courses where classification, diagnosis, or contextual judgment are core skills", "When you want to move students beyond surface pattern recognition toward principled reasoning"],
+      science: "Research on contrasting cases demonstrates that presenting students with varied examples before or alongside instruction produces significantly stronger conceptual understanding and transfer than studying a single worked example (Schwartz & Bransford, 1998).",
+      today: ["Choose one concept students frequently misapply and ask AI to generate two contrasting cases — one that clearly exemplifies the concept and one that resembles it superficially but does not qualify. Ask students to identify which case fits, explain precisely why the other does not, and name the feature that distinguishes them. This works as a warm-up, exit ticket, or discussion prompt."],
+      term: ["Build a contrasting-case analysis into one existing assignment. Ask AI to generate three to four cases that vary along a key conceptual dimension — same context with different decisions, the same framework under different stakeholder conditions, or two approaches that appear similar but reflect different underlying reasoning. Students classify each case, justify their classification using course frameworks, and explain what the variation reveals about the concept itself."],
+      major: ["Design a case-based assessment structure where contrasting cases are the primary vehicle for evaluating understanding across the course. Progress from simple paired comparisons early in the term to multi-case analyses that require students to identify patterns across variation, diagnose edge cases, and articulate when a framework applies or breaks down. Assess not just whether students classify correctly, but how precisely they explain the reasoning behind their distinctions."],
+      prompts: [
+        "Generate two contrasting cases for [concept] — one that clearly exemplifies it and one that resembles it closely but does not qualify. Make the distinction between them conceptually meaningful, not obvious on the surface.",
+        "Create a set of four cases that vary along the following dimension: [describe]. Each case should require students to apply course frameworks to justify their classification rather than rely on surface features.",
+        "Generate a near-miss case for this concept — an example that shares most features of a strong example but fails on one critical criterion. Do not identify which criterion.",
+        "Produce two policy decisions that appear to share the same rationale but reflect fundamentally different underlying frameworks. Include enough contextual detail that the distinction requires careful analysis to detect.",
+        "Generate a contrasting pair where one case represents strong disciplinary practice and one represents a common professional misstep. Make both cases plausible enough that students would need course knowledge to distinguish them.",
+        "Create three variations of this scenario that shift one variable at a time — stakeholder, context, and constraint. What changes in each case and why would that matter to a practitioner in this field?",
+        "Design a classification task using contrasting cases that would require students to articulate the boundary conditions of this concept — where it applies, where it does not, and what determines the difference."
+      ],
+      student: "In this assignment, you will be asked to analyze a set of cases that have been deliberately constructed to look similar on the surface but differ in ways that matter. Your task is not simply to sort them into categories — it is to explain precisely what distinguishes one from another, using the frameworks and concepts we have developed in this course. This kind of careful comparative analysis is one of the most important forms of thinking in this field. Experts do not just recognize correct examples; they can articulate exactly why something qualifies or does not, and what would need to change for a judgment to shift. That is the standard this assignment asks you to work toward." },
+
+    { id: "portfolio-assessments", goal: "time", name: "Portfolio-Based AI-Era Assessments",
+      q: "Assess how student thinking develops across drafts, feedback, and reflection over time",
+      use: "Use this when you want to assess not just what students produce, but how their thinking develops over time, with AI as an available tool rather than a prohibited one.",
+      what: "By making the full arc of thinking visible across drafts, feedback cycles, and reflections, these portfolios assess the one thing AI cannot replicate: the development of a student's own judgment over time.",
+      why: ["Makes AI use transparent and assessable rather than hidden and penalized", "Rewards the quality of thinking and revision, not just the polish of a final product"],
+      when: ["In courses where development of judgment, voice, or disciplinary reasoning is a central goal", "When you want a summative assessment that is genuinely resistant to wholesale AI outsourcing"],
+      science: "Research on portfolio assessment shows that iterative, process-visible evaluation produces stronger learning outcomes than single-point assessments, particularly for developing higher-order thinking skills (Boud & Falchikov, 2006).",
+      today: ["Add a single process reflection to one existing assignment. Students submit, alongside their final product, one paragraph describing where they used AI, what it contributed, and one decision in their final submission that was genuinely theirs and that they can explain and defend. This introduces the portfolio mindset without structural redesign, and immediately makes AI use a subject of reflection rather than concealment."],
+      term: ["Redesign one major assignment as a three-stage portfolio submission:", { ol: ["An initial draft completed independently.", "A revised draft that documents AI feedback received and the decisions made in response — what was accepted, rejected, and why.", "A reflective memo explaining how thinking evolved across the two drafts and what the revision process revealed about the student's own understanding."] }, "Grade all three stages, with explicit criteria for quality of reasoning and revision."],
+      major: ["Build a cumulative portfolio structure across the full course. Students keep a running record of their work on major assignments, including initial attempts, AI interactions, revision decisions, and reflections. At the end of the term, they submit a capstone portfolio with a framing essay tracing how their thinking developed — where their judgment strengthened, where AI was useful and where it was not, and what they now understand about their own learning. Assess depth of reflection, quality of revision across iterations, and how clearly students articulate their own intellectual development."],
+      prompts: [
+        "Review this student draft: [paste]. Provide feedback that identifies two areas where the reasoning is underdeveloped and two where it is strong. Frame your feedback as questions the student should be able to answer in their revision, not as corrections.",
+        "Generate a revision checklist for this assignment that asks students to evaluate their own draft against the specific standards of this discipline — not general writing quality.",
+        "Here is a student's first draft and their revision: [paste both]. Identify what changed between the two versions and evaluate whether the changes reflect deeper understanding or surface editing.",
+        "Design a reflection prompt that asks students to explain which piece of AI feedback they chose not to follow and why. What would a strong answer to that question look like?",
+        "Generate portfolio evaluation criteria that reward growth in reasoning quality across drafts rather than the polish of the final submission alone.",
+        "What would a capstone reflection prompt look like that asks students to trace the development of one key idea across their portfolio — from first attempt to final submission?",
+        "Design a structured AI interaction log template students could complete each time they use AI on a portfolio assignment, documenting what they asked, what AI produced, and what they decided to do with it."
+      ],
+      student: "This course uses a portfolio-based approach to assessment because developing real expertise is not a single-moment event — it is a process that unfolds across drafts, feedback, revision, and reflection. You are expected to use AI as one tool in that process, and to document how you used it: what it contributed, what you chose to keep, what you chose to change, and why. The decisions you make in response to feedback — from AI or from me — are where your learning becomes visible. A polished final product that arrived without evidence of thinking will be assessed differently than a submission that shows how your reasoning developed and deepened over time. The goal of this portfolio is not to prove you can produce a strong answer. It is to demonstrate that you are becoming someone who thinks carefully, revises deliberately, and understands why your judgments are sound." }
+  ];
+
+  // Questions in the order the deck lists them. A question can point to a strategy (by id) or to another Badavas guide.
+  const QUESTIONS = {
+    outsourcing: ["ai-stress-test", "process-visible-assignments", "interactive-defenses", "ai-as-starting-point", "anchor-to-course-context"],
+    deepen: ["ai-supported-retrieval-practice", "prompt-the-why", "critique-the-ai-reasoning",
+      { q: "Have students find and correct flawed AI explanations", name: "Planted-Error Hunt", note: "This one lives in our metacognition guide.", href: "aiandmetacognition.html#planted-error-hunt" },
+      "ai-productive-failure", "teach-the-ai"],
+    time: ["ai-assisted-rubric-drafting", "role-play-simulations", "contrasting-cases", "portfolio-assessments"]
+  };
+
+  const byId = {}; S.forEach(function (s) { byId[s.id] = s; });
+  const goalById = {}; GOALS.forEach(function (g) { goalById[g.id] = g; });
+  const statusEl = document.getElementById("status");
+  function say(t) { statusEl.textContent = ""; setTimeout(function () { statusEl.textContent = t; }, 30); }
+  function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  function renderBlocks(blocks) {
+    const box = el("div", "blocks");
+    blocks.forEach(function (b) {
+      if (typeof b === "string") box.appendChild(el("p", null, b));
+      else if (Array.isArray(b)) { const ul = el("ul"); b.forEach(function (t) { ul.appendChild(el("li", null, t)); }); box.appendChild(ul); }
+      else if (b && b.ol) { const ol = el("ol"); b.ol.forEach(function (t) { ol.appendChild(el("li", null, t)); }); box.appendChild(ol); }
+    });
+    return box;
+  }
+
+  function copyText(text, btn, what) {
+    function done() {
+      const old = btn.textContent; btn.textContent = "Copied"; btn.classList.add("done");
+      say(what + " copied to clipboard.");
+      setTimeout(function () { btn.textContent = old; btn.classList.remove("done"); }, 1800);
+    }
+    function fallback() {
+      const ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) { say("Copy didn't work here. Select the text and copy it instead."); }
+      document.body.removeChild(ta);
+    }
+    try {
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
+    } catch (e) { fallback(); }
+  }
+
+  function more(title, sub, inner) {
+    const d = el("details", "more");
+    const s = el("summary"); const t = el("span", null, title);
+    if (sub) t.appendChild(el("span", "sub", sub));
+    s.appendChild(t); d.appendChild(s);
+    const box = el("div", "inner"); inner.forEach(function (n) { box.appendChild(n); }); d.appendChild(box);
+    return d;
+  }
+
+  function strategyCard(s, opts) {
+    const g = goalById[s.goal];
+    const card = el("article", "strat " + g.c);
+    card.appendChild(el("span", "tag", g.short));
+    const h = el("h3", null, s.name); h.tabIndex = -1; if (opts && opts.headingId) h.id = opts.headingId; card.appendChild(h);
+    card.appendChild(el("p", "what", s.what));
+    card.appendChild(el("p", "use", s.use));
+
+    const today = el("div", "today");
+    const tl = el("div", "tl"); tl.appendChild(el("b", null, "Start here: try it today")); tl.appendChild(el("span", "label", "10–15 minutes"));
+    today.appendChild(tl); today.appendChild(renderBlocks(s.today)); card.appendChild(today);
+
+    const lv = el("div", "levels");
+    const a = el("div", "level"); a.appendChild(el("span", "label", "This term · one assignment")); a.appendChild(renderBlocks(s.term));
+    const b = el("div", "level"); b.appendChild(el("span", "label", "Major redesign")); b.appendChild(renderBlocks(s.major));
+    lv.appendChild(a); lv.appendChild(b);
+    card.appendChild(more("Scale this design", "This term · Major redesign", [lv]));
+
+    const ol = el("ol", "prompts");
+    s.prompts.forEach(function (p, i) {
+      const li = el("li"); li.appendChild(el("span", null, p));
+      const btn = el("button", "copy", "Copy"); btn.type = "button";
+      btn.setAttribute("aria-label", "Copy prompt " + (i + 1) + " for " + s.name);
+      btn.addEventListener("click", function () { copyText(p, btn, "Prompt"); });
+      li.appendChild(btn); ol.appendChild(li);
+    });
+    card.appendChild(more("AI prompts for your redesign", s.prompts.length + " ready to copy", [ol]));
+
+    const st = el("div", "student");
+    if (s.studentNote) st.appendChild(el("p", "hint", s.studentNote));
+    st.appendChild(el("blockquote", null, s.student));
+    const row = el("div", "row"); const cb = el("button", "copy", "Copy this language"); cb.type = "button";
+    cb.addEventListener("click", function () { copyText(s.student, cb, "Student-facing language"); });
+    row.appendChild(cb); row.appendChild(el("span", "hint", "For your syllabus or assignment sheet")); st.appendChild(row);
+    card.appendChild(more("Language for students", "Syllabus or assignment sheet", [st]));
+
+    const wg = el("div", "whygrid");
+    const w1 = el("div"); w1.appendChild(el("span", "label", "Why it works")); const u1 = el("ul"); s.why.forEach(function (t) { u1.appendChild(el("li", null, t)); }); w1.appendChild(u1);
+    const w2 = el("div"); w2.appendChild(el("span", "label", "Best for")); const u2 = el("ul"); s.when.forEach(function (t) { u2.appendChild(el("li", null, t)); }); w2.appendChild(u2);
+    wg.appendChild(w1); wg.appendChild(w2);
+    const sci = el("div", "science"); sci.appendChild(el("span", "label", "The research")); sci.appendChild(el("p", null, s.science));
+    card.appendChild(more("Why it works", "The research behind it", [wg, sci]));
+    return card;
+  }
+
+  /* ---------- Tabs ---------- */
+  const tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function showTab(name, focus) {
+    tabs.forEach(function (t) {
+      const on = t.dataset.tab === name;
+      t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      if (on && focus) t.focus();
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { showTab(t.dataset.tab); setUrl({ tab: t.dataset.tab === "find" ? null : t.dataset.tab }); });
+    t.addEventListener("keydown", function (e) {
+      let j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") j = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === "Home") j = 0; else if (e.key === "End") j = tabs.length - 1;
+      if (j !== null) { e.preventDefault(); showTab(tabs[j].dataset.tab, true); }
+    });
+  });
+
+  /* ---------- URL state ---------- */
+  function setUrl(params) {
+    try {
+      const u = new URL(window.location.href);
+      ["tab", "goal", "strategy"].forEach(function (k) { u.searchParams.delete(k); });
+      Object.keys(params).forEach(function (k) { if (params[k]) u.searchParams.set(k, params[k]); });
+      history.replaceState(null, "", u.pathname + u.search);
+    } catch (e) { /* file:// or restricted: selection still works */ }
+  }
+
+  /* ---------- Find a strategy ---------- */
+  let goal = null, pick = null;
+  const goalsEl = document.getElementById("goals");
+  const step2 = document.getElementById("step2");
+  const qsEl = document.getElementById("qs");
+  const detail = document.getElementById("detail");
+
+  GOALS.forEach(function (g) {
+    const b = el("button", "goal " + g.c); b.type = "button"; b.dataset.goal = g.id; b.setAttribute("aria-pressed", "false");
+    b.appendChild(el("span", "gc", "Goal " + g.n + " · " + QUESTIONS[g.id].length + " strategies"));
+    b.appendChild(el("span", "gt", g.name));
+    b.addEventListener("click", function () { chooseGoal(g.id, true); });
+    goalsEl.appendChild(b);
+  });
+
+  function chooseGoal(id, focus) {
+    goal = id; pick = null; detail.innerHTML = "";
+    const g = goalById[id];
+    Array.prototype.forEach.call(goalsEl.children, function (b) { b.setAttribute("aria-pressed", b.dataset.goal === id ? "true" : "false"); });
+    qsEl.innerHTML = ""; qsEl.className = "qs " + g.c;
+    QUESTIONS[id].forEach(function (item) {
+      if (typeof item === "string") {
+        const s = byId[item];
+        const b = el("button", "q"); b.type = "button"; b.dataset.s = s.id; b.setAttribute("aria-pressed", "false");
+        b.appendChild(el("span", "qt", s.q)); b.appendChild(el("span", "qn", s.name));
+        b.addEventListener("click", function () { choose(s.id, true); });
+        qsEl.appendChild(b);
+      } else {
+        const a = el("a", "q"); a.href = item.href;
+        a.appendChild(el("span", "qt", item.q)); a.appendChild(el("span", "qn", item.name + " · metacognition guide ↗"));
+        qsEl.appendChild(a);
+      }
+    });
+    step2.hidden = false;
+    setUrl({ goal: id });
+    say(g.name + ". " + QUESTIONS[id].length + " options below.");
+    if (focus) document.getElementById("step2-h").focus();
+  }
+
+  function choose(id, focus) {
+    const s = byId[id]; if (!s) return;
+    if (goal !== s.goal) chooseGoal(s.goal, false);
+    pick = id;
+    Array.prototype.forEach.call(qsEl.querySelectorAll("button.q"), function (b) { b.setAttribute("aria-pressed", b.dataset.s === id ? "true" : "false"); });
+    detail.innerHTML = "";
+    const block = el("div", "stepblock");
+    const head = el("div", "stephead"); const sn = el("span", "sn", "3"); sn.setAttribute("aria-hidden", "true");
+    head.appendChild(sn); head.appendChild(el("h2", null, "Your strategy")); block.appendChild(head);
+    block.appendChild(strategyCard(s, { headingId: "pick-h" }));
+    detail.appendChild(block);
+    setUrl({ strategy: id });
+    if (focus) document.getElementById("pick-h").focus();
+  }
+
+  /* ---------- All strategies ---------- */
+  const groupsEl = document.getElementById("groups");
+  const filterbar = document.querySelector(".filterbar");
+  const groupEls = {}; const rowEls = {};
+  GOALS.forEach(function (g) {
+    const chip = el("button", "chip", "Goal " + g.n + ": " + g.short); chip.type = "button"; chip.dataset.goal = g.id; chip.setAttribute("aria-pressed", "false");
+    filterbar.appendChild(chip);
+    const grp = el("div", "group " + g.c);
+    const h = el("h2", null, g.name); h.appendChild(el("span", "cnt", QUESTIONS[g.id].length + " strategies"));
+    grp.appendChild(h);
+    QUESTIONS[g.id].forEach(function (item) {
+      if (typeof item === "string") {
+        const s = byId[item];
+        const d = el("details", "srow"); d.id = s.id;
+        const sum = el("summary"); sum.appendChild(el("span", "sn", s.name)); sum.appendChild(el("span", "sq", s.q));
+        d.appendChild(sum);
+        let built = false;
+        d.addEventListener("toggle", function () { if (d.open && !built) { d.appendChild(strategyCard(s)); built = true; } });
+        d.build = function () { if (!built) { d.appendChild(strategyCard(s)); built = true; } };
+        grp.appendChild(d); rowEls[s.id] = d;
+      } else {
+        const r = el("div", "extrow"); r.appendChild(el("span", null, item.q));
+        const a = el("a", null, item.name + " (metacognition guide) ↗"); a.href = item.href; r.appendChild(a);
+        grp.appendChild(r);
+      }
+    });
+    groupsEl.appendChild(grp); groupEls[g.id] = grp;
+  });
+  filterbar.addEventListener("click", function (e) {
+    const b = e.target.closest(".chip"); if (!b) return;
+    const id = b.dataset.goal;
+    filterbar.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === b ? "true" : "false"); });
+    Object.keys(groupEls).forEach(function (k) { groupEls[k].hidden = !(id === "all" || id === k); });
+    say(id === "all" ? "Showing all 14 strategies." : "Showing " + goalById[id].name + ".");
+  });
+
+  function openInAll(id) {
+    const d = rowEls[id]; if (!d) return false;
+    showTab("all");
+    Object.keys(groupEls).forEach(function (k) { groupEls[k].hidden = false; });
+    filterbar.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c.dataset.goal === "all" ? "true" : "false"); });
+    d.build(); d.open = true;
+    d.scrollIntoView({ block: "start", behavior: "instant" });
+    return true;
+  }
+
+  /* ---------- Start-up: deep links ---------- */
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const hash = decodeURIComponent((window.location.hash || "").slice(1));
+    if (hash && byId[hash]) openInAll(hash);
+    else if (q.get("strategy") && byId[q.get("strategy")]) { choose(q.get("strategy"), false); document.getElementById("detail").scrollIntoView({ block: "start", behavior: "instant" }); }
+    else if (q.get("goal") && goalById[q.get("goal")]) { chooseGoal(q.get("goal"), false); document.getElementById("step2").scrollIntoView({ block: "start", behavior: "instant" }); }
+    else if (q.get("tab") === "all" || q.get("tab") === "about") showTab(q.get("tab"));
+  } catch (e) { /* older browsers: the deck still works without deep links */ }
+  window.addEventListener("hashchange", function () { const h = decodeURIComponent(window.location.hash.slice(1)); if (byId[h]) openInAll(h); });
+
+  /* ---------- Print: every strategy, fully expanded ---------- */
+  let printState = null;
+  window.addEventListener("beforeprint", function () {
+    printState = Object.keys(rowEls).map(function (k) { return [k, rowEls[k].open]; });
+    Object.keys(rowEls).forEach(function (k) { rowEls[k].build(); rowEls[k].open = true; rowEls[k].querySelectorAll("details.more").forEach(function (m) { m.dataset.was = m.open ? "1" : ""; m.open = true; }); });
+  });
+  window.addEventListener("afterprint", function () {
+    if (!printState) return;
+    printState.forEach(function (p) { const d = rowEls[p[0]]; d.open = p[1]; d.querySelectorAll("details.more").forEach(function (m) { m.open = m.dataset.was === "1"; }); });
+  });
+})();
+</script>
+</body>
+</html>
